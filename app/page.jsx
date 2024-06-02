@@ -82,7 +82,7 @@ const Home = () => {
   if (!contributionsData?.contributions) return null;
 
   const colorScheme = searchParams.get("color_scheme") || "emerald";
-  const darkMode = searchParams.get("scheme") === "dark";
+  const darkMode = searchParams.get("theme") === "dark";
   const showDayLabels = searchParams.get("day_label") !== "hide";
   const showPointer = searchParams.get("week_pointer") !== "hide";
 
@@ -173,8 +173,8 @@ const Home = () => {
 
   return (
     <div
-      className={`flex gap-1 h-screen justify-center items-center ${
-        darkMode ? "dark" : ""
+      className={`flex gap-1 h-screen w-screen justify-center items-center ${
+        darkMode ? "bg-slate-800" : "bg-slate-300"
       }`}
     >
       <div className="flex">
