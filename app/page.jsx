@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { IconArrowNarrowDown } from "@tabler/icons-react";
+
 import {
   getHighest,
   getMissedDays,
@@ -16,7 +17,7 @@ import {
 } from "@/lib/helpers";
 import { tailwindColors } from "@/lib/constants";
 
-const HeatMap = ({ sliceNumber }) => {
+const Home = () => {
   const [contributionsData, setContributionsData] = useState([]);
   const [stats, setStats] = useState({ streak: 0, highest: 0, median: 0 });
   const searchParams = useSearchParams();
@@ -210,7 +211,7 @@ const HeatMap = ({ sliceNumber }) => {
   );
 };
 
-export default HeatMap;
+export default Home;
 
 // osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/t31k/Downloads/heatmap_2.png"'
 
