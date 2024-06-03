@@ -182,13 +182,13 @@ const Home = () => {
         darkMode ? "bg-slate-800" : "bg-slate-300"
       }`}
     >
+      <button className="absolute top-[300px]" onClick={testFire}>
+        test
+      </button>
       <div className="flex">
         {showDayLabels && (
           <div className="flex flex-col gap-1 mr-3">
-            <div
-              className="h-[20px] text-slate-800 font-mono font-semibold"
-              onClick={testFire}
-            >
+            <div className="h-[20px] text-slate-800 font-mono font-semibold">
               S
             </div>
             <div className="h-[20px] text-slate-800 font-mono font-semibold">
