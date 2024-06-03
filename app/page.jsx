@@ -47,6 +47,11 @@ const Home = () => {
     }
   };
 
+  const testFire = async () => {
+    const res = axios.post(process.env.NEXT_PUBLIC_TEST_FIRE);
+    console.log(res);
+  };
+
   const generateStats = (contributionsData) => {
     let highest = getHighest(contributionsData);
     let median = getMedian(contributionsData);
@@ -180,7 +185,10 @@ const Home = () => {
       <div className="flex">
         {showDayLabels && (
           <div className="flex flex-col gap-1 mr-3">
-            <div className="h-[20px] text-slate-800 font-mono font-semibold">
+            <div
+              className="h-[20px] text-slate-800 font-mono font-semibold"
+              onClick={testFire}
+            >
               S
             </div>
             <div className="h-[20px] text-slate-800 font-mono font-semibold">
