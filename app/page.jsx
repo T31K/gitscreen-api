@@ -47,11 +47,6 @@ const Home = () => {
     }
   };
 
-  const testFire = async () => {
-    const res = axios.post(process.env.NEXT_PUBLIC_TEST_FIRE);
-    console.log(res);
-  };
-
   const generateStats = (contributionsData) => {
     let highest = getHighest(contributionsData);
     let median = getMedian(contributionsData);
@@ -88,8 +83,8 @@ const Home = () => {
 
   const colorScheme = searchParams.get("color_scheme") || "emerald";
   const darkMode = searchParams.get("theme") === "dark";
-  const showDayLabels = searchParams.get("day_label") !== "hide";
-  const showPointer = searchParams.get("week_pointer") !== "hide";
+  const showDayLabels = searchParams.get("day_labels") !== "hide";
+  const showPointer = searchParams.get("current_week_pointer") !== "hide";
 
   const startOffsets = {
     0: 0, // Sunday
@@ -182,9 +177,6 @@ const Home = () => {
         darkMode ? "bg-slate-800" : "bg-slate-300"
       }`}
     >
-      <button className="absolute top-[300px]" onClick={testFire}>
-        test
-      </button>
       <div className="flex">
         {showDayLabels && (
           <div className="flex flex-col gap-1 mr-3">
@@ -220,7 +212,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/t31k/Downloads/heatmap_2.png"'
-
-// week pointer, color scheme, day_labels, year, update frequency
